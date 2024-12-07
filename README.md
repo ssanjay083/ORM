@@ -37,14 +37,11 @@ class Book (models.Model):
 class BookAdmin(admin.ModelAdmin):
     	list_display= ('book_no', 'book_name', 'author_name', 'Email', 'buyer_name','mobile_no')
 ```
-views.py
+admin.py
 ```
 from django.contrib import admin
-from django.urls import path
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+from .models import Book, BookAdmin
+admin.site.register(Book,BookAdmin)
 ```
 # OUTPUT
 Include the screenshot of your admin page.
